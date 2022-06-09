@@ -1,9 +1,7 @@
 <?php
 
-include __DIR__.'/db.php'
-
-/*
 $dischi = [
+
       [
       "poster"=> "https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
       "title"=> "New Jersey",
@@ -74,66 +72,6 @@ $dischi = [
           "genre"=> "Pop",
           "year"=> "1987"
       ]
-]
-*/
+      ];
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-  <title>PHP Dischi</title>
-</head>
-<body>
-  <div id="app">
-
-  <div id="header" class="d-flex d-flex justify-content-between align-items-center">
-
-    <img src="img/pngegg.png" alt="Logo">
-
-    <select v-model="cercaGenere" @change="('cerca', cercaGenere)">
-      <option value="">Seleziona un genere</option>
-      <option value="Pop">Pop</option>
-      <option value="Rock">Rock</option>
-      <option value="Jazz">Jazz</option>
-      <option value="Metal">Metal</option>
-    </select>
-
-  </div>
-
-  <div id="main">
-    <div class="container">
-        <div :genereDaCercare="genereDaCercare">
-
-        <div id="divline">
-        
-        <?php foreach($dischi as $disco):?>
-        <div class="col-3 carta">
-        <img class="thumb" src="<?php echo $disco['poster']?>" alt="Disco.title">
-         <div>
-          <h5><?php echo $disco['title']?></h5>
-          <h5><?php echo $disco['author']?></h5>
-          <p><?php echo $disco['year']?></p>
-          <p><?php echo $disco['genre']?></p>
-         </div>
-        </div>
-        <?php endforeach ?>
-
-        </div>
-        </div>
-    </div>
-  </div>
-
-
-
-  </div>
-  
-</body>
-</html>
